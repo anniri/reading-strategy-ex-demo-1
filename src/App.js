@@ -1,5 +1,5 @@
 import './App.css';
-import exerciseMaterialJSON from './exerciseMaterial.json';
+import { parseMarkdownToHtml } from './textParser';
 
 function App() {
 
