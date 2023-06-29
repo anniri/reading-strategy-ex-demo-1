@@ -1,1 +1,1 @@
-# reading-strategy-ex-1
+# Prototype for reading strategy exercise
