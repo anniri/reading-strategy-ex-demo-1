@@ -1,9 +1,17 @@
 import './App.css';
 import exerciseMaterialJSON from './exerciseMaterial.json';
 import QuestionBar from './components/QuestionBar';
+import { useState } from 'react';
 
 
 function App() {
+    
+    /*
+    State variable showQuestions defines QuestionBar components class.
+    This class defines bar's display value. On big screens, this will always be block.
+    On smaller screens, user affects this value through ui buttons. 
+    */
+    const [showQuestions, setShowQuestions] = useState(false);
 
     let content = (
         <div>
@@ -23,14 +31,24 @@ function App() {
             source: ""
         }
     }
-    
+
     return (
         <div className="App">
+            <button 
+                id="toggle-question-view"
+                onClick={() => setShowQuestions(true)}
+            >Kysymykset
+            </button>
             <main>
                 <div className="text-view">
                     {exerciseMaterial.material.content}
                 </div>
-                <QuestionBar multipleChoicesCount={exerciseMaterial.multipleChoicesCount} openQuestionsCount={exerciseMaterial.openQuestionsCount} />
+                <QuestionBar 
+                    showQuestions={showQuestions} 
+                    setShowQuestions={setShowQuestions}
+                    multipleChoicesCount={exerciseMaterial.multipleChoicesCount} 
+                    openQuestionsCount={exerciseMaterial.openQuestionsCount} 
+                />
             </main>
 
 

@@ -1,4 +1,16 @@
-@media only screen and (min-width: 600px) {
+body {
+    box-sizing: border-box;
+}
+
+.question-bar {
+    display: none;
+}
+
+.question-bar-showing {
+    display: block;
+}
+
+@media only screen and (min-width: 800px) {
     main {
         margin: auto;
         display: flex;
@@ -6,4 +18,21 @@
         border: 1px solid black;
     }
     
+    #toggle-question-view {
+        display: none;
+    }
+
+    .question-bar, .question-bar-showing {
+        display: block;
+        width: 50%;
+    }
+
+    #close-question-bar {
+        display: none;
+    }
+
+    .text-view {
+        width: 50%;
+    }
+
 }
