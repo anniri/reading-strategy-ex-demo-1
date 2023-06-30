@@ -2,7 +2,7 @@
 //Text is divided by line breaks and markdown syntax is replaced with corresponding html tags.
 //Text formatting may include 2 heading levels (h1 and h2) and paragraphs (p). Text decoration may be bold (b) and italic (i).
 
-export function parseMarkdownToHtml(filePath) {
+export function parseMarkdownToHtml(filepath) {
     const fs = require("fs");
     fs.readFile(filepath, "utf8", (err, data) => {
         if(err) {
