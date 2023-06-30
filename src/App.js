@@ -1,5 +1,6 @@
 import './App.css';
 import exerciseMaterialJSON from './exerciseMaterial.json';
+import QuestionBar from './components/QuestionBar';
 
 
 function App() {
@@ -25,9 +26,13 @@ function App() {
     
     return (
         <div className="App">
-            <div>
-                {exerciseMaterial.material.content}
-            </div>
+            <main>
+                <div className="text-view">
+                    {exerciseMaterial.material.content}
+                </div>
+                <QuestionBar multipleChoicesCount={exerciseMaterial.multipleChoicesCount} openQuestionsCount={exerciseMaterial.openQuestionsCount} />
+            </main>
+
 
         </div>
     );
