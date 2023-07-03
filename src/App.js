@@ -40,7 +40,7 @@ function App() {
             >Kysymykset
             </button>
             <main>
-                <div className="text-view">
+                <div className="text-display">
                     {exerciseMaterial.material.content}
                 </div>
                 <QuestionBar 

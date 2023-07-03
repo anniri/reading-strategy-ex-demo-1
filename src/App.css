@@ -1,5 +1,32 @@
+@font-face {
+    font-family: notoSans;
+    src: url(fonts/notosans/NotoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: notoSans;
+    src: url(fonts/notosans/NotoSans-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: notoSerif;
+    src: url(fonts/notoserif/static/NotoSerif-Regular.ttf);
+}
+
+@font-face {
+    font-family: notoSerif;
+    src: url(fonts/notoserif/static/NotoSerif-Bold.ttf);
+    font-weight: bold;
+}
+
 body {
     box-sizing: border-box;
+    font-family: notoSans, Arial, Helvetica, sans-serif;
+}
+
+.text-display {
+    font-family: notoSerif, 'Times New Roman', Times, serif;
 }
 
 .question-bar {
@@ -10,12 +37,37 @@ body {
     display: block;
 }
 
+.create-question-container fieldset {
+    border: 0px;
+}
+
+.create-question-container fieldset label {
+    width: 100%;
+    display: block;
+}
+
+.multichoice-question-field {
+    width: 100%;
+}
+
+.multichoice-question-label, .create-open-question-label {
+    font-weight: bold;
+}
+
+.create-open-question-input {
+    width: 100%;
+}
+
+.create-open-question-answer-input {
+    width: 70%;
+    display: block;
+}
+
 @media only screen and (min-width: 800px) {
     main {
         margin: auto;
         display: flex;
-        width: 60%;
-        border: 1px solid black;
+        width: 70%;
     }
     
     #toggle-question-view {
@@ -31,7 +83,7 @@ body {
         display: none;
     }
 
-    .text-view {
+    .text-display {
         width: 50%;
     }
 
