@@ -1,7 +1,8 @@
 import './App.css';
-import exerciseMaterialJSON from './exerciseMaterial.json';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import QuestionBar from './components/QuestionBar';
 import { useState } from 'react';
+import TestForm from './components/TestForm';
 
 
 function App() {
@@ -38,28 +39,36 @@ function App() {
         }
     }
 
+    let frontPageElement = (
+        <div id="first-view">
+        <button 
+            id="toggle-question-view"
+            onClick={() => setShowQuestions(true)}
+        >Kysymykset
+        </button>
+        <main>
+            <div className="text-display">
+                {exerciseMaterial.material.content}
+            </div>
+            <QuestionBar 
+                showQuestions={showQuestions} 
+                setShowQuestions={setShowQuestions}
+                multipleChoicesCount={exerciseMaterial.multipleChoicesCount} 
+                openQuestionsCount={exerciseMaterial.openQuestionsCount}
+                setFormData={setFormData} 
+            />
+        </main>
+    </div>
+    )
+
     return (
-        <div className="App">
-            <button 
-                id="toggle-question-view"
-                onClick={() => setShowQuestions(true)}
-            >Kysymykset
-            </button>
-            <main>
-                <div className="text-display">
-                    {exerciseMaterial.material.content}
-                </div>
-                <QuestionBar 
-                    showQuestions={showQuestions} 
-                    setShowQuestions={setShowQuestions}
-                    multipleChoicesCount={exerciseMaterial.multipleChoicesCount} 
-                    openQuestionsCount={exerciseMaterial.openQuestionsCount}
-                    setFormData={setFormData} 
-                />
-            </main>
+        <BrowserRouter>
+        <Routes>
+            <Route path="/" exact element={frontPageElement} />
+            <Route path="/test" element={<TestForm formData={formData} />} />
+        </Routes>
+        </BrowserRouter>
 
-
-        </div>
     );
 }
 

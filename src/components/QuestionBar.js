@@ -1,7 +1,10 @@
 import MultipleChoices from "./MultipleChoices";
 import OpenQuestions from "./OpenQuestions";
+import { useNavigate } from "react-router-dom";
 
 function QuestionBar(props) {
+
+    const navigate = useNavigate();
 
     const saveQuestions = (e) => {
         e.preventDefault();
@@ -29,6 +32,7 @@ function QuestionBar(props) {
                     choiceOpt3: formData.get(`choiceOpt3-${fieldId}`),
                     correct: formData.get(`choiceRadio-${fieldId}`)
                 }
+
                 multichoices.push(newChoice)
             }
 
@@ -42,11 +46,14 @@ function QuestionBar(props) {
                 openQuestions.push(newOpen);
             }
         })
+        console.log(multichoices);
+        console.log(openQuestions)
 
         props.setFormData({
             multiChoiceQuestions: multichoices,
             openQuestions: openQuestions
-        })
+        });
+        navigate("/test")
     }
 
     return (
