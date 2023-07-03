@@ -13,6 +13,12 @@ function App() {
     */
     const [showQuestions, setShowQuestions] = useState(false);
 
+    //State variable for saving questions and answers that user writes on the form.
+    const [formData, setFormData] = useState({
+        multiChoiceQuestions: [],
+        openQuestions: []
+    });
+
     let content = (
         <div>
             <h1>Otsikko</h1>
@@ -47,7 +53,8 @@ function App() {
                     showQuestions={showQuestions} 
                     setShowQuestions={setShowQuestions}
                     multipleChoicesCount={exerciseMaterial.multipleChoicesCount} 
-                    openQuestionsCount={exerciseMaterial.openQuestionsCount} 
+                    openQuestionsCount={exerciseMaterial.openQuestionsCount}
+                    setFormData={setFormData} 
                 />
             </main>
 

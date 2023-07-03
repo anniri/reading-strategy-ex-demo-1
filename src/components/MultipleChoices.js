@@ -4,27 +4,36 @@ function MultipleChoices(props) {
 
     const newMultichoice = () => {
 
-        //Generate unique identifiers that are used as field element ids.
-        let radioIds = [uuid(), uuid(), uuid()];
-        let optionIds = [uuid(), uuid(), uuid()];
+        /*
+        Generate unique identifier that is used as a fieldset's key and when naming the field elements.
+        Elements follow a naming pattern:
+            Input for question: choiceQuestion-fieldId
+            Radio buttons: choiceRadio-fieldId
+            Input for answer option: choiceOptN-fieldId
+        Radio button's value attribute references answer option's index.
+        */
         let fieldId = uuid();
 
         return (
             <fieldset key={fieldId} className="create-multichoice">
-                <label htmlFor="multichoice-question" className="multichoice-question-label">Keksi kysymys: <input name="multichoice-question" type="text" className="multichoice-question-field" id={uuid()}/>
+                <label  className="multichoice-question-label">
+                    Keksi kysymys: <input name={`choiceQuestion-${fieldId}`} type="text" className="multichoice-question-field" />
                 </label>
                 {/*First choice*/}
-                <label htmlFor={radioIds[0]}>
-                <input type="radio" id={radioIds[0]} name={`multichoice-options-${fieldId}`} value="first-option"></input>
-                Vaihtoehto 1: <input type="text" id={optionIds[0]}/></label>
+                <label>
+                <input type="radio" name={`choiceRadio-${fieldId}`} value={"choiceOpt1"}></input>
+                Vaihtoehto 1: <input type="text" name={`choiceOpt1-${fieldId}`} />
+                </label>
                 {/*Second choice*/}
-                <label htmlFor={radioIds[1]}>
-                <input type="radio" id={radioIds[1]} name={`multichoice-options-${fieldId}`} value="first-option"></input>
-                Vaihtoehto 2: <input type="text" id={optionIds[1]}/></label>
+                <label>
+                <input type="radio" name={`choiceRadio-${fieldId}`} value={"choiceOpt2"}></input>
+                Vaihtoehto 2: <input type="text" name={`choiceOpt2-${fieldId}`} />
+                </label>
                 {/*Third choice*/}
-                <label htmlFor={radioIds[2]}>
-                <input type="radio" id={radioIds[2]} name={`multichoice-options-${fieldId}`} value="first-option"></input>
-                Vaihtoehto 3: <input type="text" id={optionIds[2]}/></label>
+                <label>
+                <input type="radio" name={`choiceRadio-${fieldId}`} value={"choiceOpt2"}></input>
+                Vaihtoehto 3: <input type="text" name={`choiceOpt3-${fieldId}`} />
+                </label>
             </fieldset>
         )
     }
@@ -36,7 +45,7 @@ function MultipleChoices(props) {
     }
 
     return (
-        <div id="create-multichoice-container" class="create-question-container">
+        <div id="create-multichoice-container" className="create-question-container">
             <h3>Monivalintakysymykset ({props.count} kpl)</h3>
             {questionFields}         
         </div>
