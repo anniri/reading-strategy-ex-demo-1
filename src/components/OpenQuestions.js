@@ -2,6 +2,7 @@ import {v4 as uuid} from 'uuid';
 
 function OpenQuestions(props) {
 
+    //Generate unique identifier that is used as a fieldset's key and when naming the field elements.
     const newOpenQuestion = () => {
         let fieldId = uuid();
 

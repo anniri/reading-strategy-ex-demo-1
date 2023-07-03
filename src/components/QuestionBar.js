@@ -16,7 +16,7 @@ function QuestionBar(props) {
         let openQuestions = [];
 
         formData.forEach((answer, name) => {
-            
+            //Iterating through formdata and finding user's question inputs and other inputs associated with the question.
             //By form field's naming conventions, input for question is recognized with how input's name starts. 
             if(name.startsWith("choiceQuestion")) {
                 //Each question set has an unique fieldId. All associated field names end with same fieldId.
