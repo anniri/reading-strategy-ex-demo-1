@@ -26,6 +26,7 @@ function QuestionBar(props) {
                 let fieldId = name.slice(15);
     
                 let newChoice = {
+                    id: fieldId,
                     question: answer,
                     choiceOpt1: formData.get(`choiceOpt1-${fieldId}`), //Using fieldId, question's answer options can be found from the formData.
                     choiceOpt2: formData.get(`choiceOpt2-${fieldId}`),
@@ -39,6 +40,7 @@ function QuestionBar(props) {
             if(name.startsWith("openQuestion")) {
                 let fieldId = name.slice(13);
                 let newOpen = {
+                    id: fieldId,
                     question: answer,
                     modelAnswer: formData.get(`openAnswer-${fieldId}`) 
                 }

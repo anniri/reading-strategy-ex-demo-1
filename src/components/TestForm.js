@@ -20,8 +20,9 @@ function TestForm(props) {
             (props.formData.multiChoiceQuestions.length > 0 && props.formData.openQuestions.length > 0)
             ?<div>
             <form>
-                <TestMultipleChoices choiceQuestions={props.formData.multipleQuestions} />
+                <TestMultipleChoices choiceQuestions={props.formData.multiChoiceQuestions} />
                 <TestOpenQuestions openQuestions={props.formData.openQuestions} />
+                <button type="submit">Valmis</button>
             </form>
             </div>
             : <div>Ei kysymyksiä</div>
