@@ -5,15 +5,15 @@ function TestMultipleChoices(props) {
             <fieldset key={questObj.id} className="test-multichoice">
                 <p className="multi-question">{questObj.question}</p>
                 <label>
-                    <input type="radio" name={`choiceRadio-${questObj.id}`} value="choiceOpt1"/>
+                    <input type="radio" name={`${questObj.id}`} value="choiceOpt1"/>
                     {questObj.choiceOpt1}
                 </label>
                 <label>
-                    <input type="radio" name={`choiceRadio-${questObj.id}`} value="choiceOpt2"/>
+                    <input type="radio" name={`${questObj.id}`} value="choiceOpt2"/>
                     {questObj.choiceOpt1}
                 </label>
                 <label>
-                    <input type="radio" name={`choiceRadio-${questObj.id}`} value="choiceOpt3"/>
+                    <input type="radio" name={`${questObj.id}`} value="choiceOpt3"/>
                     {questObj.choiceOpt1}
                 </label>
             </fieldset>

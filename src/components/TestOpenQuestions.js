@@ -4,8 +4,8 @@ function TestOpenQuestions(props) {
         return (
             <fieldset key={questObj.id} className="test-open-question">
                 <label>
-                    <p class="open-question">{questObj.question}</p>
-                    <input type="text" name={`openAnswer-${questObj.id}`} />
+                    <p className="open-question">{questObj.question}</p>
+                    <input type="text" name={`${questObj.id}`} />
                 </label>
             </fieldset>
         )
