@@ -21,7 +21,7 @@ function MultipleChoices(props) {
                 </label>
                 {/*First choice*/}
                 <label>
-                <input type="radio" name={`choiceRadio-${fieldId}`} value={"choiceOpt1"}></input>
+                <input type="radio" name={`choiceRadio-${fieldId}`} value={"choiceOpt1"} checked></input>
                 Vaihtoehto 1: <input type="text" name={`choiceOpt1-${fieldId}`} />
                 </label>
                 {/*Second choice*/}
@@ -47,6 +47,7 @@ function MultipleChoices(props) {
     return (
         <div id="create-multichoice-container" className="create-question-container">
             <h3>Monivalintakysymykset ({props.count} kpl)</h3>
+            <p>Muista merkitä oikea vastausvaihtoehto.</p>
             {questionFields}         
         </div>
         
