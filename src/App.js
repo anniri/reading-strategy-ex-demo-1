@@ -36,8 +36,8 @@ function App() {
     )
 
     let exerciseMaterial = {
-        multipleChoicesCount: 3,
-        openQuestionsCount: 2,
+        multipleChoicesCount: 1,
+        openQuestionsCount: 1,
         material: {
             content: content,
             source: "Wikipedia: Minna Canth. Henkilöhistoria.",

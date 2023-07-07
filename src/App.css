@@ -153,7 +153,7 @@ button[type="submit"]:hover {
     background-color: #d4dd89;
 }
 
-#test-form {
+#test-form, #checked-test-container {
     width: 95%;
     margin: auto;
 }
@@ -224,7 +224,7 @@ button[type="submit"]:hover {
         font-size: 1.2em;
     }
 
-    #test-form {
+    #test-form, #checked-test-container {
         width: 50%;
     }
 

@@ -21,7 +21,7 @@ function MultipleChoices(props) {
                 </label>
                 {/*First choice*/}
                 <label>
-                <input type="radio" name={`choiceRadio-${fieldId}`} value={"choiceOpt1"} checked></input>
+                <input type="radio" name={`choiceRadio-${fieldId}`} value={"choiceOpt1"} defaultChecked></input>
                 Vaihtoehto 1: <input type="text" name={`choiceOpt1-${fieldId}`} />
                 </label>
                 {/*Second choice*/}

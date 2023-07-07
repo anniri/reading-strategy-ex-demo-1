@@ -23,14 +23,11 @@ function TestForm(props) {
 
         let answers = [];
         formData.forEach((answer, name) => {
-            console.log(answer)
-            console.log(name)
             answers.push({
                 id: name,
                 answer: answer
             })
         })
-        console.log(answers)
         setAnswerData(answers);
         setTestChecked(true);
     }

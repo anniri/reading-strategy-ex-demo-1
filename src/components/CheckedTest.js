@@ -1,4 +1,15 @@
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 function CheckedTest(props) {
+
+    const navigate = useNavigate();
+
+    useEffect( () => {
+        if(!props.questions || !props.answers) {
+            navigate("/")
+        }
+    }, [])
 
     const newCheckedMultichoice = (question, answer) => {
         return (
@@ -36,11 +47,14 @@ function CheckedTest(props) {
     if(props.questions && props.answers) {
         props.questions.forEach(question => {
             let answer = props.answers.find(answer => answer.id === question.id)
-            if(question.hasOwnProperty("modelAnswer")) {
-                questionElements.push(newCheckedOpenQuestion(question, answer.answer));
-            } else {
-                questionElements.push(newCheckedMultichoice(question, answer.answer));
+            if(answer) {
+                if(question.hasOwnProperty("modelAnswer")) {
+                    questionElements.push(newCheckedOpenQuestion(question, answer.answer));
+                } else {
+                    questionElements.push(newCheckedMultichoice(question, answer.answer));
+                }
             }
+
         });
     }
 
@@ -48,6 +62,7 @@ function CheckedTest(props) {
     return (
         <div id="checked-test-container">
             {questionElements}
+            <button onClick={() => navigate("/")}>Takaisin tekstiin</button>
         </div>
     )
 }
