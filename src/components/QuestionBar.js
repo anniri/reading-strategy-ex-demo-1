@@ -55,6 +55,9 @@ function QuestionBar(props) {
             multiChoiceQuestions: multichoices,
             openQuestions: openQuestions
         });
+
+        sessionStorage.setItem("formQuestions", JSON.stringify({multiChoiceQuestions: multichoices, openQuestions: openQuestions}));
+
         navigate("/test")
     }
 

@@ -12,20 +12,55 @@ function CheckedTest(props) {
     }, [])
 
     const newCheckedMultichoice = (question, answer) => {
+        let answerCorrect = question.correct === answer;
+
         return (
             <div className="checked-multichoice" key={`checked-multi-${question.id}`}>
-                <p className="checked-multichoice-question">{question.question}</p>
-                <label className="checked-multichoice-radio">
+                <h2 className="checked-multichoice-question">{question.question}</h2>
+                <label 
+                    className={question.correct === "choiceOpt1" 
+                                ? "checked-radio checked-radio-correct" 
+                                :(!answerCorrect && answer === "choiceOpt1")
+                                    ? "checked-radio checked-radio-false"
+                                    : "checked-radio"}
+                >
                     <input type="radio" disabled checked={answer === "choiceOpt1" ? "checked" : ""}/>
                     {question.choiceOpt1}
+                    {(question.correct === "choiceOpt1") 
+                        ? <span className="correct-icon">&#10003;</span> 
+                        : (!answerCorrect && answer === "choiceOpt1")
+                            ? <span className="false-icon">&#10007;</span>
+                            : ""}
                 </label>
-                <label className="checked-multichoice-radio">
+                <label                     
+                    className={question.correct === "choiceOpt2" 
+                    ? "checked-radio checked-radio-correct" 
+                    :(!answerCorrect && answer === "choiceOpt2")
+                        ? "checked-radio checked-radio-false"
+                        : "checked-radio"}
+                >
                     <input type="radio" disabled checked={answer === "choiceOpt2" ? "checked" : ""}/>
                     {question.choiceOpt2}
+                    {(question.correct === "choiceOpt2") 
+                        ? <span className="correct-icon">&#10003;</span> 
+                        : (!answerCorrect && answer === "choiceOpt2")
+                            ? <span className="false-icon">&#10007;</span>
+                            : ""}
                 </label>
-                <label className="checked-multichoice-radio">
+                <label 
+                    className={question.correct === "choiceOpt3" 
+                    ? "checked-radio checked-radio-correct" 
+                    :(!answerCorrect && answer === "choiceOpt3")
+                        ? "checked-radio checked-radio-false"
+                        : "checked-radio"}
+                >
                     <input type="radio" disabled checked={answer === "choiceOpt3" ? "checked" : ""}/>
                     {question.choiceOpt3}
+                    {(question.correct === "choiceOpt3") 
+                        ? <span className="correct-icon">&#10003;</span> 
+                        : (!answerCorrect && answer === "choiceOpt3")
+                            ? <span className="false-icon">&#10007;</span>
+                            : ""}
                 </label>
             </div>
         )
@@ -34,10 +69,10 @@ function CheckedTest(props) {
     const newCheckedOpenQuestion = (question, answer) => {
         return (
             <div className="checked-openQuestion" key={`checked-open-${question.id}`}>
-                <p className="checked-openQuestion-question">{question.question}</p>
-                <p>Vastauksesi:</p>
+                <h2 className="checked-openQuestion-question">{question.question}</h2>
+                <p className="bold-text">Vastauksesi:</p>
                 <p>{answer}</p>
-                <p>Mallivastaus:</p>
+                <p className="bold-text">Mallivastaus:</p>
                 <p>{question.modelAnswer}</p>
             </div>
         )
@@ -61,6 +96,7 @@ function CheckedTest(props) {
 
     return (
         <div id="checked-test-container">
+            <h1>Tuloksesi</h1>
             {questionElements}
             <button onClick={() => navigate("/")}>Takaisin tekstiin</button>
         </div>

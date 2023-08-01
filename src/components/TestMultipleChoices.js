@@ -1,20 +1,21 @@
 function TestMultipleChoices(props) {
 
     const newMultiQuestion = (questObj) => {
+
         return (
             <fieldset key={questObj.id} className="test-multichoice">
-                <p className="multi-question">{questObj.question}</p>
+                <h3 className="multi-question">{questObj.question}</h3>
                 <label>
                     <input type="radio" name={`${questObj.id}`} value="choiceOpt1"/>
                     {questObj.choiceOpt1}
                 </label>
                 <label>
                     <input type="radio" name={`${questObj.id}`} value="choiceOpt2"/>
-                    {questObj.choiceOpt1}
+                    {questObj.choiceOpt2}
                 </label>
                 <label>
                     <input type="radio" name={`${questObj.id}`} value="choiceOpt3"/>
-                    {questObj.choiceOpt1}
+                    {questObj.choiceOpt3}
                 </label>
             </fieldset>
         )

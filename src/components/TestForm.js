@@ -39,7 +39,7 @@ function TestForm(props) {
             !testChecked
             ?<div>
             <form onSubmit={checkTest} id="test-form">
-                <h2>Testaa tietosi</h2>
+                <h1>Testaa tietosi</h1>
                 <TestMultipleChoices 
                     choiceQuestions={props.formData.multiChoiceQuestions}/>
                 <TestOpenQuestions openQuestions={props.formData.openQuestions} />

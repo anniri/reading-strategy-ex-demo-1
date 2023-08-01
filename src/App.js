@@ -71,7 +71,7 @@ function App() {
                 setShowQuestions={setShowQuestions}
                 multipleChoicesCount={exerciseMaterial.multipleChoicesCount} 
                 openQuestionsCount={exerciseMaterial.openQuestionsCount}
-                setFormData={setFormData} 
+                setFormData={setFormData}
             />
         </main>
     </div>
