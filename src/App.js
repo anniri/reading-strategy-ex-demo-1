@@ -36,7 +36,7 @@ function App() {
     )
 
     let exerciseMaterial = {
-        multipleChoicesCount: 1,
+        multipleChoicesCount: 2,
         openQuestionsCount: 1,
         material: {
             content: content,
